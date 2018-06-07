@@ -2,4 +2,4 @@ saml-idp:
    build: .
    ports:
     - "7000:7000"
-   net: "host"
+   net: "bridge"

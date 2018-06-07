@@ -519,6 +519,11 @@ function _runServer(argv) {
     })
   });
 
+  app.get('/public-key/:fingerprint', function(req, res, next) {
+    // console.log(`fingerprint: ${fingerprint}`)
+    res.sendfile('./idp-public-cert.pem')
+  });
+
   app.get(['/settings'], function(req, res, next) {
     res.render('settings', {
       idp: req.idp.options
